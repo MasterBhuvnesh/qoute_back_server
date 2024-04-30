@@ -3,13 +3,13 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const UserModel = require("./models/Users");
 const app = express();
-app.use(
-  cors({
-    origin: ["https://masterbhuvnesh.github.io/Thoughtful-Threads/"],
-    methods: ["POST", "GET"],
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: ["https://masterbhuvnesh.github.io/Thoughtful-Threads/"],
+//     methods: ["POST", "GET"],
+//     credentials: true,
+//   })
+// );
 app.use(express.json());
 
 // URL
