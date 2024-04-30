@@ -4,8 +4,12 @@ const cors = require("cors");
 const UserModel = require("./models/Users");
 const app = express();
 
-// Enable CORS for all routes
-app.use(cors());
+// Enable CORS for specific origins
+app.use(cors({
+  origin: ["https://masterbhuvnesh.github.io", "http://localhost:3000"],
+  methods: ["POST", "GET"],
+  credentials: true // Optional, depending on your use case
+}));
 
 app.use(express.json());
 
