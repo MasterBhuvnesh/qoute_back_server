@@ -3,19 +3,14 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const UserModel = require("./models/Users");
 const app = express();
-// app.use(
-//   cors({
-//     origin: ["https://masterbhuvnesh.github.io/Thoughtful-Threads/"],
-//     methods: ["POST", "GET"],
-//     credentials: true,
-//   })
-// );
+
+// Enable CORS for all routes
+app.use(cors());
+
 app.use(express.json());
 
-// URL
-mongoose.connect(
-  "mongodb+srv://bhuvneshverma:Verma29042005@collage.lkkh7mp.mongodb.net/Quotes"
-);
+// Connect to MongoDB
+mongoose.connect("mongodb+srv://bhuvneshverma:Verma29042005@collage.lkkh7mp.mongodb.net/Quotes");
 
 // GET ALL USER DATA
 app.get("/", (req, res) => {
@@ -25,6 +20,7 @@ app.get("/", (req, res) => {
 });
 
 // RUN THE SERVER
-app.listen(3001, () => {
-  console.log("server is Running");
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
