@@ -5,7 +5,7 @@ const UserModel = require("./models/Users");
 const app = express();
 app.use(
   cors({
-    origin: ["https://masterbhuvnesh.github.io/Thoughtful-Threads"],
+    origin: ["https://masterbhuvnesh.github.io/Thoughtful-Threads/"],
     methods: ["POST", "GET"],
     credentials: true,
   })
