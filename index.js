@@ -18,7 +18,7 @@ mongoose.connect(
 );
 
 // GET ALL USER DATA
-app.get(" ", (req, res) => {
+app.get("/", (req, res) => {
   UserModel.find({})
     .sort({ name: 1 })
     .then((users) => res.json(users))
